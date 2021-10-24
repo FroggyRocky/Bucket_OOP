@@ -1,0 +1,60 @@
+
+/*/////////////////////////// List of Goods //////////////////// */
+.goods-container img {
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+    max-height:  222px;
+}
+
+
+.goods-container h2 {
+    font-size: 22px;
+    margin: 0 0 20px 0;
+    line-height: 100%;
+}
+
+.goods-container .package.featured.article-information {
+    text-align: center;
+}
+
+.goods .package.featured p .article-price{
+    font-size: 15px;
+    font-weight: 500;
+    margin: 25px 0;
+   
+}
+
+
+/*///////////////////////////  Cart //////////////////// */
+
+.bucket-container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 0;
+}
+
+.cart-bucket {
+    padding: 10px;
+}
+table.shopCart {
+    border-collapse: collapse;
+    border: 1px solid  #666;
+}
+
+table.shopCart td {
+    border: 1px solid #666;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+table.shopCart img {
+    width: 48px;
+}
+
+table.shopCart span.total {
+    font-weight: 500;
+}
+
+
