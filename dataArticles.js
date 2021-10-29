@@ -34,7 +34,7 @@ const cartInitialData = {
         "url": "#",
         "image": "./pictures/6533206_images_1657626044.jpg",
         "price": 2416.00
-    },
+    }
 }
 
 ////////////// RENDER (DRAW) ARTICLES /////////////////////////////////////////
@@ -42,16 +42,16 @@ const cartInitialData = {
 const container = document.querySelector(".goods-container")
 let createdObj = `<div class = "goods-list-container pricing-table row">`
 
-for(key in cartInitialData) {
+for (key in cartInitialData) {
 
-    createdObj+= `<div class = "article-container col col-md-6 col-lg-4">`
-    createdObj+= `<div class = "article-information-container package featured">`
-    createdObj+= `<h2 class = "article-name">${cartInitialData[key]["name"]}</h2>`
-    createdObj+= `<img class = "article-image" src="${cartInitialData[key]["image"]}" alt="watche's-picture">`
-    createdObj+= `<p class = "article-price price">${cartInitialData[key]["price"] + "$"}</p>`
-    createdObj+= `<button class="add-to-cart button-primary" data-articul="${key}">В Корзину</button>`
+    createdObj += `<div class = "article-container col col-md-6 col-lg-4">`
+    createdObj += `<div class = "article-information-container package featured">`
+    createdObj += `<h2 class = "article-name">${cartInitialData[key]["name"]}</h2>`
+    createdObj += `<img class = "article-image" src="${cartInitialData[key]["image"]}" alt="watche's-picture">`
+    createdObj += `<p class = "article-price price">${cartInitialData[key]["price"] + "$"}</p>`
+    createdObj += `<button class="add-to-cart button-primary" data-articul="${key}">В Корзину</button>`
     createdObj += `</div>`
-    createdObj+= `</div>`
+    createdObj += `</div>`
 }
 
 container.innerHTML = createdObj;
@@ -64,19 +64,19 @@ const addData = {}; // - DATA OF ADDED (CLICKED) ARTICLES
 /////////////////////ADDING DATA TO "addData" BY CLICK////////////////////////////
 const btn = document.querySelectorAll(".add-to-cart")
 
-btn.forEach((item)=> {
-    item.addEventListener("click", function() {
+btn.forEach((item) => {
+    item.addEventListener("click", function () {
         let targetKey = event.target.dataset.articul
-        let dataClicked = cartInitialData[targetKey]  
-        
-             if(!addData[targetKey]) {
+        let dataClicked = cartInitialData[targetKey]
+
+        if (!addData[targetKey]) {
             console.log("not found");
-        addData[targetKey] = dataClicked;
-        addData[targetKey]["count"] = 1;
+            addData[targetKey] = dataClicked;
+            addData[targetKey]["count"] = 1;
         } else if (addData[targetKey]) {
             addData[targetKey]["count"]++
         }
-    localStorage.setItem("cartData", JSON.stringify(addData))
+        localStorage.setItem("cartData", JSON.stringify(addData))
     })
 })
 
